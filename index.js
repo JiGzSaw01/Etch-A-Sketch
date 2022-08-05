@@ -1,10 +1,10 @@
 const container = document.querySelector('#gridContainer');
 const gridSizeBtn = document.querySelector('.gridNumber');
-
+let defaultGridSize = 16
 function gridSize (){
     gridSizeBtn.addEventListener('click', function(e){
        let num= prompt('Enter a number of Grid')
-        console.log(num)
+        
     })
     
  
@@ -15,8 +15,8 @@ gridSize()
 
 
 
-
 const createGrid = (size)=>{
+    
     container.style.gridTemplateColumns = `repeat(${size}, auto)`;
     container.style.gridTemplateRows = `repeat(${size}, auto)`;
     for (let i = 0; i < size * size; i++) {
@@ -31,4 +31,5 @@ const createGrid = (size)=>{
         container.append(grid);
     }
 }
-createGrid(16)
+createGrid(defaultGridSize)
+console.log(createGrid)
