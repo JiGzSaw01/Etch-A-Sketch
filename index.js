@@ -19,22 +19,30 @@ const createGrid = (size)=>{
         container.append(grid);
     }
 }
-createGrid(1)
+createGrid(16)
 //console.log(createGrid)
 
-const reset =()=>{
-    const cell = document.querySelectorAll('.cell')
-    cell.forEach(gridCell => gridCell.remove)
-   
+//const reset =()=>{
+   // const cell = document.querySelectorAll('.cell')
+    //cell.forEach((gridCell)=>{gridCell.remove})
     
+    
+    
+//}
+
+const reset = () =>{
+  const cell = document.querySelectorAll('.cell');
+  cell.forEach((gridCell) =>{
+    gridCell.remove()
+  })
+
 }
 const gridSize=() =>{
   gridSizeBtn.addEventListener('click', () =>{
     let sizeBtn = prompt('Enter a number of Grid');
+    
     reset();
-    createGrid(sizeBtn)
-    
-    
+    createGrid(sizeBtn);
   })  
   
 }
