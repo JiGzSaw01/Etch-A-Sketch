@@ -5,8 +5,8 @@ let GridSize = 16
 
 const createGrid = (size)=>{
     
-    container.style.gridTemplateColumns = `repeat(${size}, auto)`;
-    container.style.gridTemplateRows = `repeat(${size}, auto)`;
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     for (let i = 0; i < size * size; i++) {
         const grid = document.createElement('div');
         grid.classList.add('cell');
@@ -40,9 +40,17 @@ const reset = () =>{
 const gridSize=() =>{
   gridSizeBtn.addEventListener('click', () =>{
     let sizeBtn = prompt('Enter a number of Grid');
+
+    if(sizeBtn > 100){
+      alert("Max Grid is 100x100 only!");
+      reset();
+      createGrid(16);
+    }else{
+      reset();
+      createGrid(sizeBtn);
+    }
     
-    reset();
-    createGrid(sizeBtn);
+    
   })  
   
 }
@@ -50,5 +58,4 @@ gridSize()
 
 
 
-// make the reset function work
-//constrain when slecting the button size it is adding new cell insterad of changing the grid size
+// center the grid

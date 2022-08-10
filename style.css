@@ -1,33 +1,29 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-
 }
-
-
 
 .grid {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    margin: auto;
+    max-width: 500px;
+    position: relative;
 }
 
 #gridContainer {
-
     display: grid;
-    width: auto;
-    height: auto;
 
+    width: 500px;
+    height: 500px;
 }
 
 .cell {
-
     border: 1px solid;
-    width: 50px;
-    height: 50px;
 }
